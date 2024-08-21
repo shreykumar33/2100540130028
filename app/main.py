@@ -13,7 +13,7 @@ cache = {
 }
 
 def fetch_numbers(number_type):
-    #Fetch numbers from the test server based on type.
+    
     url = BASE_URLS.get(number_type)
 
     if not url:
@@ -43,7 +43,6 @@ def get_average(numberid):
         abort(400, description=f"Invalid number ID {numberid}")
 
     numbers = get_numbers_from_cache(numberid)
-
     if not numbers:
         abort(404, description=f"No numbers found for ID {numberid}")
 
@@ -56,6 +55,7 @@ def get_average(numberid):
         'avg': average
     }
     )
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9876, debug=False)
