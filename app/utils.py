@@ -28,7 +28,7 @@ class TestAverageCalculator(unittest.TestCase):
                 self.assertEqual(numbers, expected_numbers, f"Numbers for ID {numberid} do not match expected values.")
                 self.assertEqual(avg, expected_avg, f"Average for ID {numberid} does not match the expected value.")
 
-                # Optionally print response for debugging
+                # Optionally we can print response for debugging
                 print(f"Response JSON for {numberid}:", response_json)
 
 if __name__ == '__main__':
