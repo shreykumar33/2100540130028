@@ -1,5 +1,6 @@
 import unittest
-from app.main import app  # Import your Flask app
+from app.main import app  
+
 
 class TestAverageCalculator(unittest.TestCase):
     BASE_URL = 'http://localhost:9876/numbers'
@@ -20,8 +21,8 @@ class TestAverageCalculator(unittest.TestCase):
                 response_json = response.get_json()
                 numbers = response_json.get('numbers')
                 avg = response_json.get('avg')
-
                 expected_avg = sum(expected_numbers) / len(expected_numbers) if expected_numbers else 0
+
 
                 self.assertEqual(numbers, expected_numbers, f"Numbers for ID {numberid} do not match expected values.")
                 self.assertEqual(avg, expected_avg, f"Average for ID {numberid} does not match the expected value.")
